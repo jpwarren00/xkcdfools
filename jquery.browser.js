@@ -4,7 +4,8 @@ jQuery Browser Plugin
 	* Version 2.3
 	* 2008-09-17 19:27:05
 	* URL: http://jquery.thewikies.com/browser
-	* Description: jQuery Browser Plugin extends browser detection capabilities and can assign browser selectors to CSS classes.
+	* Description: jQuery Browser Plugin extends browser detection
+        *   capabilities and can assign browser selectors to CSS classes.
 	* Author: Nate Cavanaugh, Minhchau Dang, & Jonathan Neal
 	* Copyright: Copyright (c) 2008 Jonathan Neal under dual MIT/GPL license.
 	* JSLint: This javascript file passes JSLint verification.
