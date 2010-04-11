@@ -1,6 +1,8 @@
 <?php
 /*
- * This is a modular implementation of the CLI theme within Drupal.
+ * This is a modular implementation of the CLI theme within Drupal.  I really
+ * don't know where I'm going to take this, but I think there will be a hidden
+ * block that can drop down with a hotkey press like the old Quake terminal.
  *
  * Original client-side logic for Wordpress CLI theme
  * R. McFarland, 2006, 2007, 2008
@@ -25,7 +27,7 @@
  }
 
  function cli_mod_menu(){
-     $items ['cli'] - array(
+     $items ['cli'] = array(
          'title' => 'Command Line Interface',
          'page callback' => 'cli_page',
          'access callback' => TRUE,
