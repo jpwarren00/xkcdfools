@@ -18,7 +18,7 @@ var xkcd = {
 	latest: null,
 	last: null,
 	cache: {},
-	base: 'proxy.php?mode=native&url=http://xkcd.com/',
+	base: 'proxy.php?mode=native&url=http://drupal-testing:8888/',
 	
 	get: function(num, success, error) {
 		if (num == null) {

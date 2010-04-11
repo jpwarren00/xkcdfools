@@ -12,18 +12,26 @@
  * Chromakode, 2010
  * http://www.chromakode.com/
  */
+
  /**
   * Hook Init
   * 
   * We're just loading the necessary javascript files.
   */
  function cli_mod_init(){
-     $path_to_file = drupal_get_path('module', 'cli_mod').'/index.php';
+     $path_to_file = drupal_get_path('module', 'cli_mod');
+     
+     //Load the necessary files
      drupal_add_js($path_to_file.'/jquery.hotkeys-0.7.9.js');
      drupal_add_js($path_to_file.'/jquery.browser.js');
      drupal_add_js($path_to_file.'/jquery.konami.js');
      drupal_add_js($path_to_file.'/cli.js');
      drupal_add_js($path_to_file.'/xkcd_cli.js');
+
+     //Pass settings to the javascript client from Drupal
+     //drupal_add_js(array('cli_mod' => $values), 'setting');
+     //Accessed in javascript via:
+     //var whatever = Drupal.settings.cli_mod.array_key
  }
 
  function cli_mod_menu(){
@@ -31,7 +39,7 @@
          'title' => 'Command Line Interface',
          'page callback' => 'cli_page',
          'access callback' => TRUE,
-         //'type' => MENU_CALLBACK,
+         'type' => MENU_CALLBACK,
      );
      return $items;
  }
@@ -42,6 +50,7 @@
   */
  function cli_page(){
      $path_to_file = drupal_get_path('module', 'cli_mod').'/index.php';
+     drupal_add_css($path_to_file.'/cli.css');
      $cli_page_html = file_get_contents($path_to_file);
      return $cli_page_html;
  }
