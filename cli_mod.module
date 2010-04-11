@@ -1,7 +1,47 @@
 <?php
-/* 
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+/*
+ * This is a modular implementation of the CLI theme within Drupal.
+ *
+ * Original client-side logic for Wordpress CLI theme
+ * R. McFarland, 2006, 2007, 2008
+ * http://thrind.xamai.ca/
+ *
+ * jQuery rewrite and overhaul
+ * Chromakode, 2010
+ * http://www.chromakode.com/
  */
+ /**
+  * Hook Init
+  * 
+  * We're just loading the necessary javascript files.
+  */
+ function cli_mod_init(){
+     $path_to_file = drupal_get_path('module', 'cli_mod').'/index.php';
+     drupal_add_js($path_to_file.'/jquery.hotkeys-0.7.9.js');
+     drupal_add_js($path_to_file.'/jquery.browser.js');
+     drupal_add_js($path_to_file.'/jquery.konami.js');
+     drupal_add_js($path_to_file.'/cli.js');
+     drupal_add_js($path_to_file.'/xkcd_cli.js');
+ }
+
+ function cli_mod_menu(){
+     $items ['cli'] - array(
+         'title' => 'Command Line Interface',
+         'page callback' => 'cli_page',
+         'access callback' => TRUE,
+         //'type' => MENU_CALLBACK,
+     );
+     return $items;
+ }
+
+ /**
+  *
+  * @return <type>
+  */
+ function cli_page(){
+     $path_to_file = drupal_get_path('module', 'cli_mod').'/index.php';
+     $cli_page_html = file_get_contents($path_to_file);
+     return $cli_page_html;
+ }
 
 ?>

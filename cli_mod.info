@@ -4,3 +4,4 @@ name = CLI Mod
 description = "This module embeds an emulated command line block and page in your drupal install."
 version = 0.1d
 core = 6.x
+package = CLI
